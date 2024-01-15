@@ -1,0 +1,14 @@
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\bin\Debug\net6.0\fundamentoscsharp.exe
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\bin\Debug\net6.0\fundamentoscsharp.deps.json
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\bin\Debug\net6.0\fundamentoscsharp.runtimeconfig.json
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\bin\Debug\net6.0\fundamentoscsharp.dll
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\bin\Debug\net6.0\fundamentoscsharp.pdb
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\obj\Debug\net6.0\fundamentoscsharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\obj\Debug\net6.0\fundamentoscsharp.AssemblyInfoInputs.cache
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\obj\Debug\net6.0\fundamentoscsharp.AssemblyInfo.cs
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\obj\Debug\net6.0\fundamentoscsharp.csproj.CoreCompileInputs.cache
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\obj\Debug\net6.0\fundamentoscsharp.dll
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\obj\Debug\net6.0\refint\fundamentoscsharp.dll
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\obj\Debug\net6.0\fundamentoscsharp.pdb
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\obj\Debug\net6.0\fundamentoscsharp.genruntimeconfig.cache
+C:\Programas\balta.io\fundamentoscsharp\fundamentoscsharp\obj\Debug\net6.0\ref\fundamentoscsharp.dll
