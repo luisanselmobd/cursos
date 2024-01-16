@@ -12,24 +12,24 @@ namespace fundamentoscsharp
 
         public int Resultado { get => resultado; set => resultado = value; }
 
-        public int RealizarOperacao(int a, int b, operacoes operacao)
+        public void RealizarOperacao(int a, int b, Operacoes operacao)
         {   
             switch (operacao)
             {
-                case operacoes.somar:
+                case Operacoes.Somar:
                     Resultado = somar(a, b);
                     break;
-                case operacoes.subtrair:
+                case Operacoes.Subtrair:
                     Resultado = subtrair(a, b);
                     break;
-                case operacoes.dividir:
+                case Operacoes.Dividir:
                     Resultado = dividir(a, b);
                     break;
-                case operacoes.multiplicar:
+                case Operacoes.Multiplicar:
                     Resultado = multiplicar(a, b);
                     break;
             }
-            return Resultado; 
+            Console.WriteLine($"RESULTADO: {Resultado}"); 
         }
 
         int somar(int a, int b) { return a + b; }
@@ -40,12 +40,12 @@ namespace fundamentoscsharp
         
     }
 
-    enum operacoes
+    enum Operacoes
     {
-        somar,
-        subtrair,
-        dividir,
-        multiplicar
+        Somar,
+        Subtrair,
+        Dividir,
+        Multiplicar
     }
 
 }
