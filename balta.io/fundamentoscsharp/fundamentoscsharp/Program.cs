@@ -21,6 +21,21 @@ using System.Text;
 
 //} while (true);
 
-Cronometro cronometro = new Cronometro();
-await cronometro.Cronometrar();
+//Cronometro cronometro = new Cronometro();
+//await cronometro.Cronometrar();
 
+EditorDeTexto editorDeTexto = new EditorDeTexto();
+int escolhaUsuario = 0;
+while (escolhaUsuario != 3)
+{
+    escolhaUsuario = editorDeTexto.imprimirMenu();
+    switch(escolhaUsuario)
+    {
+        case 1:
+            editorDeTexto.criarArquivo();
+            break;
+        case 2:
+            editorDeTexto.AbrirArquivo();
+            break;
+    }
+}
