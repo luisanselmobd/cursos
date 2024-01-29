@@ -1,0 +1,8 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/balta.io/fundamentoscsharp/fundamentoscsharp/bin/Debug/net6.0
+/balta.io/fundamentoscsharp/fundamentoscsharp/obj
+/balta.io/fundamentoscsharp/.vs/fundamentoscsharp
+/.vs/cursos/v17

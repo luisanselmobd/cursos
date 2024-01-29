@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fundamentoscsharp
+namespace fundamentoscsharp.Programas.Calculadora
 {
     class Calculadora
     {
-        private int resultado;
-
-        public void RealizarOperacao(int a, int b, Operacoes operacao)
-        {   
+        int resultado;
+        void RealizarOperacao(int a, int b, Operacoes operacao)
+        {
             switch (operacao)
             {
                 case Operacoes.Somar:
@@ -27,16 +26,13 @@ namespace fundamentoscsharp
                     resultado = Multiplicar(a, b);
                     break;
             }
-            Console.WriteLine($"RESULTADO: {resultado}"); 
+            Console.WriteLine($"\nRESULTADO: {resultado}");
         }
-
         int Somar(int a, int b) { return a + b; }
         int Subtrair(int a, int b) { return a - b; }
-        int Dividir(int a, int b) { return a / b;}
+        int Dividir(int a, int b) { return a / b; }
         int Multiplicar(int a, int b) { return a * b; }
-
-
-        public string ConstruirMenuOpcoes()
+        string ConstruirMenuOpcoes()
         {
             StringBuilder menu = new StringBuilder();
             menu.AppendLine("Escolha qual operação você deseja realizar:");
@@ -46,10 +42,10 @@ namespace fundamentoscsharp
             {
                 menu.AppendLine($"{(int)item + 1} - {item}");
             }
-            menu.AppendLine("0 - Sair");
+            menu.Append("0 - Sair");
             return menu.ToString();
         }
-        public int ImprimirMenuOperacoes()
+        int ImprimirMenuOperacoes()
         {
             Console.WriteLine(ConstruirMenuOpcoes());
 
@@ -58,9 +54,9 @@ namespace fundamentoscsharp
 
             do
             {
-                string escolhaUsuario = Console.ReadLine();
+                ConsoleKeyInfo escolha = Console.ReadKey();
 
-                if (!int.TryParse(escolhaUsuario, out operacaoEscolhida))
+                if (!int.TryParse(Char.ToString(escolha.KeyChar), out operacaoEscolhida))
                 {
                     Console.WriteLine("Valor inválido! Digite novamente!");
                     continue;
@@ -80,10 +76,10 @@ namespace fundamentoscsharp
             } while (true);
 
         }
-
-        public int ImprimirMenuNumeros(int numero)
+        int ImprimirMenuNumeros(int numero, Operacoes operacao)
         {
-            Console.WriteLine($"Digite o {numero}º número inteiro:");
+            
+            Console.Write($"\nDigite o {numero}º número inteiro para {operacao.ToString().ToLower()} e confirme com 'Enter':");
             do
             {
                 string escolhaUsuario = Console.ReadLine();
@@ -91,7 +87,7 @@ namespace fundamentoscsharp
 
                 if (!int.TryParse(escolhaUsuario, out numeroEscolhido))
                 {
-                    Console.WriteLine("Valor inválido! Digite novamente!");
+                    Console.Write("Valor inválido! Digite novamente e confirme com 'Enter'!");
                     continue;
                 }
 
@@ -100,7 +96,26 @@ namespace fundamentoscsharp
             } while (true);
 
         }
+        public void Executar()
+        {        
+            int operacao;
+            string sair;
 
+            do
+            {
+                Console.Clear();
+                operacao = ImprimirMenuOperacoes();
+                if (operacao == -1)
+                    break;
+                Console.Clear();
+                int n1 = ImprimirMenuNumeros(1, (Operacoes)operacao);
+                int n2 = ImprimirMenuNumeros(2, (Operacoes)operacao);
+                RealizarOperacao(n1, n2, (Operacoes)operacao);
+                Console.WriteLine("\nPara sair, digite ESC.\nPara fazer outra operação, digite qualquer outra tecla.");
+                
+
+            } while (Console.ReadKey().Key != ConsoleKey.Escape);
+        }
     }
 
     enum Operacoes

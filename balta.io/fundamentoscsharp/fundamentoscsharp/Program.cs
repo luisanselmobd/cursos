@@ -1,41 +1,42 @@
-﻿using fundamentoscsharp;
-using System.Text;
+﻿using fundamentoscsharp.Programas.Calculadora;
+using fundamentoscsharp.Programas.Cronometro;
+using fundamentoscsharp.Programas.EditorDeTexto;
+using fundamentoscsharp.Programas.EditorHtml;
 
-//int operacao;
-//Calculadora calculadora = new Calculadora();
-//string sair;
-
-//do
-//{
-//    operacao = calculadora.ImprimirMenuOperacoes();
-//    if (operacao == -1)
-//        break;
-
-//    int n1 = calculadora.ImprimirMenuNumeros(1);
-//    int n2 = calculadora.ImprimirMenuNumeros(2);
-//    calculadora.RealizarOperacao(n1, n2, (Operacoes)operacao);
-//    Console.WriteLine("\nPara sair, digite 1.\nPara fazer outra operação, digite qualquer outra tecla.");
-//    sair = Console.ReadLine();
-//    if (sair.Equals("1"))
-//        break;
-
-//} while (true);
-
-//Cronometro cronometro = new Cronometro();
-//await cronometro.Cronometrar();
-
-EditorDeTexto editorDeTexto = new EditorDeTexto();
-int escolhaUsuario = 0;
-while (escolhaUsuario != 3)
+string menu = @"Qual dos programas abaixo você deseja executar?
+1 - Calculadora
+2 - Cronograma
+3 - Editor de Texto
+4 - Editor HTML
+ESC - Fechar programa";
+bool sair = false;
+do
 {
-    escolhaUsuario = editorDeTexto.imprimirMenu();
-    switch(escolhaUsuario)
+    Console.Clear();
+    Console.WriteLine(menu);
+    ConsoleKeyInfo escolha = Console.ReadKey();
+
+    switch (escolha.Key)
     {
-        case 1:
-            editorDeTexto.criarArquivo();
+        case ConsoleKey.D1:
+            Calculadora calculadora = new Calculadora();
+            calculadora.Executar();
             break;
-        case 2:
-            editorDeTexto.AbrirArquivo();
+        case ConsoleKey.D2:
+            Cronometro cronometro = new Cronometro();
+            await cronometro.Executar();
+            break;
+        case ConsoleKey.D3:
+            EditorDeTexto editorDeTexto = new EditorDeTexto();
+            editorDeTexto.Executar();
+            break;
+        case ConsoleKey.D4:
+            Executor executor = new Executor();
+            executor.Executar();
+            break;
+        case ConsoleKey.Escape:
+            sair = true;
             break;
     }
-}
+
+} while (!sair);

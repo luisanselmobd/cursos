@@ -1,7 +1,8 @@
 {
   "profiles": {
     "fundamentoscsharp": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "workingDirectory": "C:\\Programas\\cursos\\balta.io\\fundamentoscsharp\\fundamentoscsharp"
     },
     "WSL": {
       "commandName": "WSL2",

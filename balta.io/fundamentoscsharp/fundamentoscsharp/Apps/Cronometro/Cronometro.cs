@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fundamentoscsharp
+namespace fundamentoscsharp.Programas.Cronometro
 {
     internal class Cronometro
     {
@@ -12,7 +12,7 @@ namespace fundamentoscsharp
         bool contagemAtiva = true;
         bool repetirContagem = false;
 
-        public async Task Cronometrar()
+        async Task Cronometrar()
         {
             do
             {
@@ -30,8 +30,8 @@ namespace fundamentoscsharp
                 await contarTempo;
                 Console.Clear();
                 Console.WriteLine($"O cronômetro foi interrompido no seguinte tempo: {dataHora.ToString("HH:mm:ss")}. Deseja realizar uma nova contagem?");
-                Console.WriteLine($"Aperte qualquer tecla para iniciar a contagem ou 0 para sair");
-                repetirContagem = Console.ReadKey().Key != ConsoleKey.D0;
+                Console.WriteLine($"Aperte qualquer tecla para iniciar a contagem ou ESC para sair");
+                repetirContagem = Console.ReadKey().Key != ConsoleKey.Escape;
                 if (repetirContagem)
                 {
                     contagemAtiva = true;
@@ -52,6 +52,11 @@ namespace fundamentoscsharp
                 Console.WriteLine(dataHora.ToString("HH:mm:ss"));
                 await Task.Delay(1000);
             }
+        }
+
+        public async Task Executar()
+        {
+            await Cronometrar();
         }
     }
 }
